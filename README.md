@@ -13,4 +13,4 @@ always on a whiteboard...
  ## [1.0.0] - 2019.07.04
  ### Added
  - String reversal
- -- Exercise starts with a full character reversal, and is followed by an in place word reversal. 
+   - Exercise starts with a full character reversal, and is followed by an in place word reversal. 
