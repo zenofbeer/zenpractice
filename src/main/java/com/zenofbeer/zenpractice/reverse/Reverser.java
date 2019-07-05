@@ -1,4 +1,4 @@
-package com.zenofbeer.zenpractice.reverser;
+package com.zenofbeer.zenpractice.reverse;
 
 /**
  * Reverses a string with 2 steps.

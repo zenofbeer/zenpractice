@@ -1,9 +1,10 @@
-package com.zenofbeer.zenpractice.reverser;
+package com.zenofbeer.tests.zenpractice.reverse;
 
+import com.zenofbeer.zenpractice.reverse.Reverser;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class reverserTests {
+public class ReverserTests {
     @Test
     public void validateReverseString() {
         Reverser reverser = new Reverser();
