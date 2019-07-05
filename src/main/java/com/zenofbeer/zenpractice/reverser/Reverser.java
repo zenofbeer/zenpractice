@@ -10,38 +10,48 @@ package com.zenofbeer.zenpractice.reverser;
  * it is attached.
  */
 public class Reverser {
+    // characters outside of the below range are not printable characters.
     private static final int PRINTABLE_MIN_VALUE = 33;
     private static final int PRINTABLE_MAX_VALUE = 126;
 
+    /**
+     * Reverse the full set of characters in the string.
+     * @param input
+     * @return
+     */
     public String reverseString(String input) {
         char[] chars = input.toCharArray();
-        chars = reverseCharacters(chars, 0, chars.length - 1);
+        reverseCharacters(chars, 0, chars.length - 1);
         return new StringBuilder().append(chars).toString();
     }
 
+    /**
+     * Reverses the words in the string.
+     * @param input
+     * @return
+     */
     public String reverseWords(String input) {
         char[] chars = input.toCharArray();
-        chars = reverseWords(chars);
+        reverseWords(chars);
         return new StringBuilder().append(chars).toString();
     }
 
-    private char[] reverseCharacters(char[] chars, int startIndex, int endIndex) {
+    private void reverseCharacters(char[] chars, int startIndex, int endIndex) {
         char temp;
 
-        while(loopChecker(startIndex, endIndex)) {
+        while (loopChecker(startIndex, endIndex)) {
             temp = chars[startIndex];
             chars[startIndex] = chars[endIndex];
             chars[endIndex] = temp;
             startIndex++;
             endIndex--;
         }
-        return chars;
     }
 
     /**
      * 33 - 126
      */
-    private char[] reverseWords(char[] chars) {
+    private void reverseWords(char[] chars) {
         int startIndex = 0;
         int endIndex = 0;
         int charsLength = chars.length;
@@ -51,12 +61,10 @@ public class Reverser {
             while(loopChecker(endIndex, charsLength) && isCheckPrintable(chars[endIndex], checkPrintable)) {
                 endIndex++;
             }
-            chars = reverseCharacters(chars, startIndex, endIndex - 1);
+            reverseCharacters(chars, startIndex, endIndex - 1);
             startIndex = endIndex;
             checkPrintable = !checkPrintable;
         }
-
-        return chars;
     }
 
     private Boolean isCheckPrintable(char character, Boolean checkPrintable) {
