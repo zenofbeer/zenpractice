@@ -1,5 +1,14 @@
 package com.zenofbeer.zenpractice.reverser;
 
+/**
+ * Reverses a string with 2 steps.
+ * 1 - Reverse all characters in the string
+ * ex. This is my string --> .gnirts ym si sihT
+ *
+ * 2 - reverse all words in the string. A word is defined as a contiguous group of printable characters or a
+ * contiguous group of non-printable characters. Punctuation is considered to be a part of the work to which
+ * it is attached.
+ */
 public class Reverser {
     private static final int PRINTABLE_MIN_VALUE = 33;
     private static final int PRINTABLE_MAX_VALUE = 126;
