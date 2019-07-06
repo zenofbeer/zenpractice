@@ -1,40 +1,55 @@
 package com.zenofbeer.tests.zenpractice.collections;
 
-import com.zenofbeer.zenpractice.collections.SimpleLink;
+import com.zenofbeer.zenpractice.collections.SingleLinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class SimpleLinkTests {
     @Test
-    public void validateAddingNodes() {
-        SimpleLink root = new SimpleLink(0);
+    public void validateGetFirstNodeValue() {
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>(0);
 
         for (int i = 1; i < 20; i++) {
-            SimpleLink link = new SimpleLink(i);
-            root.addChild(link);
+            linkedList.addNode(i);
         }
 
-        boolean foundLast = false;
-        int lastValue = 0;
-        SimpleLink list = root.getChild();
+        int expected = 0;
+        int actual = linkedList.getHead();
 
-        while(!foundLast) {
-            if (list.hasChild()) {
-                list = list.getChild();
-            } else {
-                foundLast = true;
-                lastValue = list.getValue();
-            }
-        }
-
-        assertEquals(19, lastValue);
+        assertEquals(expected, actual);
     }
 
-    private SimpleLink getChild(SimpleLink link) {
-        if (link.hasChild()) {
-            getChild(link.getChild());
+    @Test
+    public void validateGetLastNodeValue() {
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>(0);
+
+        for (int i = 1; i < 100; i++) {
+            linkedList.addNode(i);
         }
-        return link;
+
+        int expected = 99;
+        int actual = linkedList.getTail();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void validateReverseList() {
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>(0);
+
+        for (int i = 1; i < 100; i++) {
+            linkedList.addNode(i);
+        }
+
+        linkedList.reverseList();
+
+        int expectedHead = 99;
+        int expectedTail = 0;
+        int actualHead = linkedList.getHead();
+        int actualTail = linkedList.getTail();
+
+        assertEquals(expectedHead, actualHead);
+        assertEquals(expectedTail, actualTail);
     }
 }
