@@ -10,6 +10,14 @@ always on a whiteboard...
  The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
  
+ ## [1.3.0] - 2019.07.07
+ ### Added
+ - Merge method to merge two fully sorted arrays.
+   - FWIW I have done this in production code. 
+ - Mergesort - need to work through this one a couple of more times. I haven't had to do this one in production
+ code before, but manually coding it up is still not going to be as fast as using the built in language libraries
+ in most cases. 
+ 
  ## [1.2.0] - 2019.07.05
  ### Added
  - Single linked list
