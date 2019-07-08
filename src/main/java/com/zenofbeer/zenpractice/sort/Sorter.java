@@ -89,31 +89,19 @@ public class Sorter {
 
         while (tempIndex < tempArray.length) {
             // test the left array first
+            // pain in the ass if statement to get rid of duplicate code
             if (leftIndex < left.length) {
-                if (rightIndex < right.length) {
-                    if (left[leftIndex] <= right[rightIndex]) {
-                        tempArray[tempIndex] = left[leftIndex];
-                        leftIndex++;
-                        tempIndex++;
-                    }
-                } else {
+                if ((rightIndex < right.length
+                        && comparator(left[leftIndex], right[rightIndex], true))
+                        || rightIndex >= right.length) {
                     tempArray[tempIndex] = left[leftIndex];
                     leftIndex++;
                     tempIndex++;
                 }
-            }
-            if (rightIndex < right.length) {
-                if (leftIndex < left.length) {
-                    if (right[rightIndex] <= left[leftIndex]) {
-                        tempArray[tempIndex] = right[rightIndex];
-                        rightIndex++;
-                        tempIndex++;
-                    }
-                } else {
-                    tempArray[tempIndex] = right[rightIndex];
-                    rightIndex++;
-                    tempIndex++;
-                }
+            } else {
+                tempArray[tempIndex] = right[rightIndex];
+                rightIndex++;
+                tempIndex++;
             }
         }
 
@@ -122,9 +110,9 @@ public class Sorter {
 
     private boolean comparator(int valueA, int valueB, boolean compareAscending) {
         if (compareAscending) {
-            return valueA > valueB;
+            return valueA >= valueB;
         } else {
-            return valueA < valueB;
+            return valueA <= valueB;
         }
     }
 }

@@ -4,8 +4,6 @@ import com.zenofbeer.tools.RandomNumbers;
 import com.zenofbeer.zenpractice.sort.Sorter;
 import org.junit.Test;
 
-import java.util.Random;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
