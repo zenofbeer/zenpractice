@@ -10,6 +10,10 @@ always on a whiteboard...
  The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
  and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
  
+ ## [1.4.0] - 2019.07.08
+ ### Added
+ - Card shuffler. 
+ 
  ## [1.3.1] - 2019.07.07
  ### Changed
  - Clean up the code to remove duplicate statements...One might argue that this makes the conditional harder to read, 
